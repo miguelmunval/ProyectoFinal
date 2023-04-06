@@ -8,4 +8,4 @@ El esquema de base de datos sería con 5 tablas y otras 2 que se crearían media
 Un mockup de ejemplo realizado en figma podría ser este:
 [Mockup de AgroAssist realizado en figma](https://www.figma.com/proto/MXfPyJoDNFJHGkmFlTsxDY/AgroAssist?node-id=1-2&scaling=min-zoom&page-id=0%3A1)
 
-En el que para los titulos uso una fuente más vistosa llamada IM FELL French Canon y para el resto de textos he usado una la cual me da mayor sensación de seriedad y profesionalidad que se llama Inder. Estas no serán las fuentes finales pero si son una representación de lo que quiero llevar a cabo ya que quiero que los títulos sean diferentes y tengan gran peso visual. 
+En el que para los titulos uso una fuente más vistosa llamada IM FELL French Canon y para el resto de textos he usado una la cual me da mayor sensación de seriedad y profesionalidad que se llama Inder. Estas no serán las fuentes finales pero si son una representación de lo que quiero realizar ya que mi idea es que los títulos sean diferentes y tengan gran peso visual. 
