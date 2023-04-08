@@ -5,13 +5,13 @@ Esta será una aplicación de gestión agricola en la que se podrá registrar tu
 
 * Tecnologías  
 
-  - Back-end:
+  - Back-end  
 En cuanto a tecnologías utilizadas se utilizará Laravel Breeze con tailwind como base para el proyecto y mysql como motor de base de datos
 
-  - Front-end:
+  - Front-end  
 En el front se usará ajax para hacer peticiones a la BBDD y apis para rellenar los datos de los formularios
 
-  - Otros
+  - Otros  
 Además la aplicación estará alojada en una instancia EC2 de aws y se realizará tambien una Landing page con css usando SASS.
 
 El esquema de base de datos sería con 5 tablas y otras 2 que se crearían mediante relaciones muchos a muchos lo que dejaría un total de 7 tablas tal que así:
