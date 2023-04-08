@@ -1,9 +1,9 @@
 # AgroAssist
 
-* Temática
+* Temática  
 Esta será una aplicación de gestión agricola en la que se podrá registrar tus propiedades así como los datos de estas (superficie, semilla plantada, ubicación, etc.)
 
-* Tecnologías
+* Tecnologías  
 
   - Back-end:
 En cuanto a tecnologías utilizadas se utilizará Laravel Breeze con tailwind como base para el proyecto y mysql como motor de base de datos
