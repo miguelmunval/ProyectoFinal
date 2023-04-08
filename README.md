@@ -14,7 +14,7 @@ En el front se usará ajax para hacer peticiones a la BBDD y apis para rellenar 
   - Otros:
 Además la aplicación estará alojada en una instancia EC2 de aws y se realizará tambien una Landing page con css usando SASS.
 
-El esquema de base de datos sería con 5 tablas y otras 2 que se crearían mediante relaciones muchos a muchos lo que dejaría un total de 7 tablas tal que así:
+El esquema de base de datos sería con 5 tablas y otras 2 que se crearían mediante relaciones muchos a muchos lo que dejaría un total de 7 tablas tal que así:  
 ![image](https://user-images.githubusercontent.com/91052453/229483367-c651e23c-e943-4f7d-bac4-57b8983b82d6.png)
 
 Un mockup de ejemplo realizado en figma podría ser este:
