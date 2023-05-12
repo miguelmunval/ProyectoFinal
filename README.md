@@ -23,4 +23,4 @@ Un mockup de ejemplo realizado en figma podría ser este:
 En el que para los titulos uso una fuente más vistosa llamada IM FELL French Canon y para el resto de textos he usado una la cual me da mayor sensación de seriedad y profesionalidad que se llama Inder. Estas no serán las fuentes finales pero si son una representación de lo que quiero realizar ya que mi idea es que los títulos sean diferentes y tengan gran peso visual. 
 
 Video primera entrega:
-[![Alt text](https://img.youtube.com/vi/q76D7-hXwvE/0.jpg)]
+![Alt text](https://img.youtube.com/vi/q76D7-hXwvE/0.jpg)]
