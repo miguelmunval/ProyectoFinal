@@ -27,4 +27,6 @@ return [
     'pass'          => 'Contraseña',
     'btn_cultivos'  => 'Cultivos',
     'btn_objetos'   => 'Objeto',
+    'hist'          => 'Historial',
+    'btn_trabajadores'      => 'Trabajadores'
 ] ;

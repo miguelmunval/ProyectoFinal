@@ -19,7 +19,7 @@ return [
     'Bienvenido'    => 'Welcome',
     'usuario'       => 'User Name',
     'Registrado'    => 'Already registered?',
-    'olvido_su_contraseña' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
+    'olvido_su_contraseña'  => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
     'enlace_res'    => 'Email Password Reset Link',
     'Nombre'        => 'Name',
     'Apellidos'     => 'Lastname',
@@ -27,4 +27,6 @@ return [
     'pass'          => 'Password',
     'btn_cultivos'  => 'Crops',
     'btn_objetos'   => 'Object',
+    'hist'          => 'History',
+    'btn_trabajadores'      => 'Workers'
 ] ;

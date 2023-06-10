@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ParcelaController;
+use App\Http\Controllers\Historial_CultivoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CultivoController;
+use App\Http\Controllers\TrabajadorController;
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ObjetoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+
 
 Route::redirect("/", "login")->name("home") ;
 
@@ -49,7 +53,8 @@ Route::group(["prefix" => "parcelas",
 Route::group(["prefix" => "users", 
               "as" => "user."], function() 
 {
-    Route::get("/",         [UserController::class, "listar"])->name("listar") ;
+    Route::get("/",         [UserController::class, "listar"])->name("listar");
+    Route::get("/disponibles",         [UserController::class, "trabaj_disp"])->name("trabaj_disp");
     /* Route::get("/crear",    [UserController::class, "crear"])->name("crear") ; */
     Route::post("/guardar",  [UserController::class, "guardar"])->name("guardar") ;
     Route::get("/borrar/{idUsu}", [UserController::class, "borrar"])->name("borrar") ;
@@ -60,6 +65,7 @@ Route::group(["prefix" => "cultivos",
               "as" => "cultivo."], function() 
 {
     Route::get("/",         [CultivoController::class, "listar"])->name("listar") ;
+    Route::get("/mostrar",         [CultivoController::class, "getbyid"])->name("getbyid") ;
     Route::get("/crear",    [CultivoController::class, "crear"])->name("crear") ;
     Route::post("/guardar",  [CultivoController::class, "guardar"])->name("guardar") ;
     Route::get("/borrar/{idCult}", [CultivoController::class, "borrar"])->name("borrar") ;
@@ -76,5 +82,23 @@ Route::group(["prefix" => "objetos",
     Route::get("/editar/{idObj}", [ObjetoController::class, "editar"])->name("editar") ;
     Route::post("/actualizar/{idObj}", [ObjetoController::class, "actualizar"])->name("actualizar") ;
 });
+Route::group(["prefix" => "trabajadores", 
+              "as" => "trabajador."], function() 
+{
+    Route::get("/",         [TrabajadorController::class, "listar"])->name("listar") ;
+    Route::get("/crear",    [TrabajadorController::class, "crear"])->name("crear") ;
+    Route::post("/guardar",  [TrabajadorController::class, "guardar"])->name("guardar") ;
+    Route::get("/borrar/{idTra}", [TrabajadorController::class, "borrar"])->name("borrar") ;
+    Route::get("/editar/{idTra}", [TrabajadorController::class, "editar"])->name("editar") ;
+    Route::post("/actualizar/{idTra}", [TrabajadorController::class, "actualizar"])->name("actualizar") ;
+});
+Route::group(["prefix" => "peticiones", 
+              "as" => "peticion."], function() 
+{
+    Route::get('/historial/{idPar}', [Historial_CultivoController::class, "Hist_Cult"])->name("Hist_Cult");
+});
+
+Route::get('/peti_ajax', [AjaxController::class, "peticionAjax"])->name("peticionAjax");
+Route::get('/petiById/{idCult}', [AjaxController::class, "findById"])->name("findById");
 
 require __DIR__.'/auth.php';
