@@ -14,7 +14,8 @@ class ObjetoController extends Controller
      */
     public function listar(Request $req) 
     {   
-        return view("objetos.main", ["datos" => Objeto::all() ]) ;
+        $objetos = Objeto::paginate(6);
+        return view("objetos.main", ["datos" => $objetos]);
     }
 
     /**

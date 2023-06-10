@@ -20,6 +20,11 @@ class UserController extends Controller
         return view("users.main", ["datos" => User::usuario()->get() ]) ;
     }
 
+    /* public function trabaj_disp(Request $req)
+    {
+        return ["datos", DB::table('users')->select(...)->whereNotIn('idUsu',DB::table('trabajadores')->select('idUsu')->get())->get()];
+    } */
+
     /**
      * @param Request $req
      * @return

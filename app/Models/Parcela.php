@@ -30,20 +30,27 @@ class Parcela extends Model
     
     public function hist_cult_par()
     {      
-        return $this->belongsToMany("App\Models\Cultivo", "Historial_Cultivo", "idPar", "idCult")
-                    ->first() ;
+        return $this->belongsToMany("App\Models\Cultivo", "historial_cultivo", "idPar", "idCult")
+                    ->getResults()->all() ;
     } 
 
     public function tra_par()
     {      
-        return $this->belongsToMany("App\Models\Trabajador", "Actividades", "idPar", "idTra")
-                    ->first() ;
+        return $this->belongsToMany("App\Models\Trabajador", "actividades", "idPar", "idTra")
+                    ->getResults()->all();
+    }
+
+    public function pro_par()
+    {      
+        return $this->belongsToMany("App\Models\Producto", "cuadernocampo", "idPar", "idPro")
+                    ->getResults()->all();
     }
 
     public function getRouteKeyName() 
     {
         return "email" ;
     }
+
     public function scopeUsuario($query) {
         return $query->where('idUsu', auth()->user()->idUsu);
     }

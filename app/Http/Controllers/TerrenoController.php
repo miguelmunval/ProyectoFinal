@@ -14,8 +14,7 @@ class ParcelaController extends Controller
      */
     public function listar(Request $req) 
     {   
-        $parcelas = Parcela::usuario()->paginate(6);
-        return view("parcelas.main", ["datos" =>  $parcelas]);
+        return view("parcelas.main", ["datos" => Parcela::usuario()->get() ]) ;
     }
 
     /**
@@ -31,9 +30,9 @@ class ParcelaController extends Controller
     {
         $parcela = new Parcela;
         $parcela->idUsu=auth()->user()->idUsu;
-        $parcela->locPar=$req->input('locPar');
-        $parcela->tamPar=$req->input('tamPar');
-        $parcela->idCult=$req->input('idCult');
+        $parcela->locTer=$req->input('locTer');
+        $parcela->tamTer=$req->input('tamTer');
+        $parcela->semTer=$req->input('semTer');
 
         $parcela->save();
         return redirect()->route('parcela.listar');
@@ -52,9 +51,9 @@ class ParcelaController extends Controller
     public function actualizar(Request $req, $parcela)
     {
         $parcelaEditar=Parcela::find($parcela);
-        $parcelaEditar->locPar=$req->input('locPar');
-        $parcelaEditar->tamPar=$req->input('tamPar');
-        $parcelaEditar->idCult=$req->input('idCult');
+        $parcelaEditar->locTer=$req->input('locTer');
+        $parcelaEditar->tamTer=$req->input('tamTer');
+        $parcelaEditar->semTer=$req->input('semTer');
 
         $parcelaEditar->update();
         return redirect()->route("parcela.listar") ;

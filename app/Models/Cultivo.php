@@ -20,7 +20,7 @@ class Cultivo extends Model
     } 
     public function hist_par_cult()
     {      
-        return $this->belongsToMany("App\Models\Parcela", "Historial_Cultivo", "idPar", "idCult")
-                    ->first() ;
+        return $this->belongsToMany("App\Models\Parcela", "historial_cultivo", "idCult", "idPar")
+                    ->getResults()->all();
     } 
 }

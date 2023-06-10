@@ -17,7 +17,7 @@ class Objeto extends Model
 
     public function user_obj()
     {      
-        return $this->belongsToMany("App\Models\User", "Inventario", "idObj", "idUsu")
+        return $this->belongsToMany("App\Models\User", "inventario", "idObj", "idUsu")
                     ->first() ;
     } 
 

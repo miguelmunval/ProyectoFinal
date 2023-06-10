@@ -17,13 +17,17 @@ class Trabajador extends Model
 
     public function par_tra()
     {      
-        return $this->belongsToMany("App\Models\Parcela", "Actividades", "idTra", "idPar")
-                    ->first() ;
+        return $this->belongsToMany("App\Models\Parcela", "actividades", "idTra", "idPar")
+                    ->getResults()->all();
     }
 
     public function user_tra()
     {      
         return $this->belongsTo("App\Models\User", "idTra", "idUsu")
                     ->first() ;
-    } 
+    }
+    
+    public function scopeUsuario($query) {
+        return $query->where('idUsu', auth()->user()->idUsu);
+    }
 }

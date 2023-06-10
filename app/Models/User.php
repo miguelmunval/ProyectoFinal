@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function obj_user()
     {      
-        return $this->belongsToMany("App\Models\Objeto", "Inventario", "idUsu", "idObj")
+        return $this->belongsToMany("App\Models\Objeto", "inventario", "idUsu", "idObj")
                     ->first() ;
     } 
 

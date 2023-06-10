@@ -16,7 +16,9 @@ class CultivoController extends Controller
      */
     public function listar(Request $req) 
     {   
-        return view("cultivos.main", ["datos" => Cultivo::all() ]) ;
+        $cultivos = Cultivo::paginate(6);
+        return view("cultivos.main", ["datos" => $cultivos]);
+        
     }
 
     /**
