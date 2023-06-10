@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('main')
+    <script>document.title = "{{ config('app.name', 'Laravel') }} - Crear" </script>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h1 class="my-5 mx-4 text-2xl">Formulario para añadir Objeto:</h1>
             </div>
             <div class="flex items-center justify-end mr-4">
-                <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="{{ route('cultivo.listar') }}"> Volver</a>
+                <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="{{ route('objeto.listar') }}"> Volver</a>
             </div>
         </div>
     </div>

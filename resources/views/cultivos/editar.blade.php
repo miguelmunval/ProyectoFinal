@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
+    <script>document.title = "{{ config('app.name', 'Laravel') }} - Editar" </script>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">

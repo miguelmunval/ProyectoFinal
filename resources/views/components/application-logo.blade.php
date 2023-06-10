@@ -1,6 +1,6 @@
 <svg
-   width="110mm"
-   height="90mm"
+   width="80mm"
+   height="60mm"
    viewBox="0 0 150 227"
    version="1.1"
    id="svg5"

@@ -3,16 +3,15 @@
 @section("main")
 
     
-    @empty($datos)
+    @empty($parcela)
         {{-- No hay datos: mostramos mensaje --}}
-        Lo siento, pero no hay parcelas en la base de datos.
+        Lo siento, pero no hay historial de cultivo en la base de datos.
     @else
-        <script>document.title = "{{ config('app.name', 'Laravel') }} - Parcelas" </script>
         <h6 class="my-5 mx-4 text-2xl">@lang('app.Bienvenido') {{ Auth::user() }}</h6>
         <div class="flex items-center justify-end mr-4">
         <a href="{{ route("parcela.crear")}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang("app.nuevo")</a>
         </div>
-        {{-- Hay datos: mostramos listado de parcelas --}}
+        {{-- Hay datos: mostramos el historial de cultivo --}}
         <table class="text-center text-2xl m-auto mt-5 bg-red-200 rounded-lg">
             <thead>
                 <tr>
@@ -24,16 +23,14 @@
             </thead>
 
             <tbody>
-            @php
-                {{$cont = 0;}}
-            @endphp
-            @foreach($datos as $parcela)
+              {{$parcela}}
+            {{-- @foreach($datos as $parcela) --}}
                 
                 <tr>
                     <td class="px-6 py-4">{{ $parcela->locPar }}</td>
                     <td class="px-6 py-4">{{ $parcela->tamPar }}ha</td>
-                    <td class="px-6 py-4" id="{{$cont}}"></td>
-                    <script>
+                    {{-- <td class="px-6 py-4" id="{{$cont}}"></td> --}}
+                    {{-- <script>
                         $("#{{$cont}}").ready(function(){
                             $.ajax({
                             url: "/petiById/"+ {{$parcela->idCult}},
@@ -43,7 +40,7 @@
                                 $("#{{$cont}}").html(result.NomCult);
                             }})
                         });
-                    </script>
+                    </script> --}}
                     
                     <td class="px-6 py-4">
                         <a href="{{ route("peticion.Hist_Cult", $parcela->idPar) }}">
@@ -67,13 +64,7 @@
                         </a>
                     </td>
                 </tr>
-                @php
-                    {{$cont++;}}
-                @endphp
-            @endforeach
-            <tr>
-                <td colspan="4" class="text-center">{{$datos->links()}}</td>
-            </tr>
+            {{-- @endforeach --}}
             </tbody>
         </table>
 

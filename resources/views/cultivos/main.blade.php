@@ -6,6 +6,7 @@
         {{-- No hay datos: mostramos mensaje --}}
         Lo siento, pero no hay parcelas en la base de datos.
     @else
+        <script>document.title = "{{ config('app.name', 'Laravel') }} - Cultivos" </script>
         <h6 class="my-5 mx-4 text-2xl">Lista de cultivos</h6>
         <div class="flex items-center justify-end mr-4">
             <a href="{{ route('cultivo.crear') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar un cultivo</a>
@@ -44,6 +45,9 @@
                         </td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td colspan="7" class="text-center">{{$datos->links()}}</td>
+                </tr>
             </tbody>
         </table>
     @endempty
