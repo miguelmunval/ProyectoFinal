@@ -9,16 +9,22 @@
       <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.guardar")); ?>" method="post">
 
       <?php echo csrf_field(); ?>
-      <label for="locPar">Localización del Parcela</label>
+      <label for="locPar">Localización de la Parcela</label>
       <br/>
       <input class="mb-5" type="text" name="locPar" required />
       <br/>
-      <label for="tamPar">Tamaño del Parcela(ha)</label>
+      <label for="tamPar">Tamaño de la Parcela(ha)</label>
       <br/>
       <input class="mb-5" type="number" name="tamPar" required />
       <br/>
-      <label for="idCult">Semilla del Parcela</label>
+      <label for="idCult">Semilla de la Parcela</label>
       <br/>
+      <select name="idCult" id="idCult">
+
+         <?php $__currentLoopData = $datos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cultivo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($cultivo->NomCult); ?>"><?php echo e($cultivo->NomCult); ?></option>
+         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </select>
       <input class="mb-5" type="text" name="idCult" />
       <br/>
 

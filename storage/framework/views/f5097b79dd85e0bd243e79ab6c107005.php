@@ -3,21 +3,21 @@
 <?php $__env->startSection("main"); ?>
 
    <div class="flex justify-center">
-      <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.actualizar", $terrenoEditar->idPar)); ?>" method="post">
+      <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.actualizar", $parcelaEditar->idPar)); ?>" method="post">
 
       <?php echo csrf_field(); ?>
 
-      <label for="locPar">Localización del Parcela</label>
+      <label for="locTer">Localización del Parcela</label>
       <br/>
-      <input class="mb-5" type="text" name="locPar" value="<?php echo e($terrenoEditar->locPar); ?>" required />
+      <input class="mb-5" type="text" name="locTer" value="<?php echo e($parcelaEditar->locTer); ?>" required />
       <br/>
-      <label for="tamPar">Tamaño del Parcela</label>
+      <label for="tamTer">Tamaño del Parcela</label>
       <br/>
-      <input class="mb-5" type="number" name="tamPar" value="<?php echo e($terrenoEditar->tamPar); ?>" required />
+      <input class="mb-5" type="number" name="tamTer" value="<?php echo e($parcelaEditar->tamTer); ?>" required />
       <br/>
-      <label for="semPar">Semilla del Parcela</label>
+      <label for="semTer">Semilla del Parcela</label>
       <br/>
-      <input class="mb-5" type="text" name="semPar" value="<?php echo e($terrenoEditar->semPar); ?>" />
+      <input class="mb-5" type="text" name="semTer" value="<?php echo e($parcelaEditar->semTer); ?>" />
       <br/>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Actualizar</button>
 
