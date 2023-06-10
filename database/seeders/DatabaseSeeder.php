@@ -17,5 +17,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\Parcela::factory(30)->create();
         \App\Models\Objeto::factory(10)->create();
         \App\Models\Trabajador::factory(5)->create();
+        \App\Models\Producto::factory(5)->create();
+        \App\Models\Actividad::factory(5)->create();
+        \App\Models\Inventario::factory(5)->create();
+        \App\Models\Historial_Cultivo::factory(50)->create();
+        \App\Models\CuadernoCampo::factory(5)->create();
     }
 }

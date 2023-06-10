@@ -8,28 +8,39 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('trabajadores', function (Blueprint $table) {
-            $table->id('idTra');
+        Schema::create('parcelas', function (Blueprint $table) 
+        {
+            $table->id('idPar');
             $table->foreignId('idUsu')
             ->references('idUsu')
             ->on('users')
             ->unsignedBigInteger();
-            $table->foreignId('jefe')
-            ->references('idUsu')
-            ->on('users')
+            $table->foreignId('idCult')
+            ->references('idCult')
+            ->on('cultivos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
             ->unsignedBigInteger();
+            $table->string('locPar');
+            $table->integer('tamPar');
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('trabajadores');
+        Schema::dropIfExists('parcelas');
     }
 };
+?>

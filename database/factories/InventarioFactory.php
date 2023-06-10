@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Trabajador>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class TrabajadorFactory extends Factory
+class InventarioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,9 @@ class TrabajadorFactory extends Factory
     {
         return [
             'idUsu' => fake()->numberBetween(1,15),
-            'jefe' => fake()->numberBetween(1,15),
+            'idObj' => fake()->numberBetween(1,3),
+            'Cantidad'=> fake()->randomDigit(5),
+            'FechComp'=> fake()->date(),
         ];
     }
 }

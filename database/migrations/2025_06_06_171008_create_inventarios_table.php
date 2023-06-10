@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trabajadores', function (Blueprint $table) {
-            $table->id('idTra');
+        Schema::create('inventario', function (Blueprint $table) {
             $table->foreignId('idUsu')
             ->references('idUsu')
             ->on('users')
             ->unsignedBigInteger();
-            $table->foreignId('jefe')
-            ->references('idUsu')
-            ->on('users')
+            $table->foreignId('idObj')
+            ->references('idObj')
+            ->on('objetos')
             ->unsignedBigInteger();
+            $table->string('Cantidad');
+            $table->date('FechComp');
+
+            $table->primary(['idUsu', 'idObj']);
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trabajadores');
+        Schema::dropIfExists('inventario');
     }
 };

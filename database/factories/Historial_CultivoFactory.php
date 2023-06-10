@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Trabajador>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class TrabajadorFactory extends Factory
+class Historial_CultivoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,9 @@ class TrabajadorFactory extends Factory
     public function definition(): array
     {
         return [
-            'idUsu' => fake()->numberBetween(1,15),
-            'jefe' => fake()->numberBetween(1,15),
+            'idPar' => fake()->numberBetween(1,25),
+            'idCult' => fake()->numberBetween(1,8),
+            'fechaCult' => fake()->date(),
         ];
     }
 }
