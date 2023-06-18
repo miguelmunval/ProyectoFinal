@@ -32,14 +32,14 @@ Video versión final de la aplicación AgroAssist:
 
 * Bibliografía:
 
-- https://laravel.com/docs/9.x
+    - https://laravel.com/docs/9.x
 
-- https://laravel.com/api/9.x/Illuminate.html
+    - https://laravel.com/api/9.x/Illuminate.html
 
-- https://github.com/fzaninotto/Faker
+    - https://github.com/fzaninotto/Faker
 
-- https://docs.aws.amazon.com/
+    - https://docs.aws.amazon.com/
 
-- https://tailwindcss.com/
+    - https://tailwindcss.com/
 
-- https://www.w3schools.com/
+    - https://www.w3schools.com/
