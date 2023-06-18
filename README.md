@@ -30,7 +30,7 @@ Video versión final de la aplicación AgroAssist:
 
 [![Alt text](https://img.youtube.com/vi/aXa4JJ8gKHo/0.jpg)](https://www.youtube.com/watch?v=aXa4JJ8gKHo)
 
-Bibliografía:
+* Bibliografía:
 
 - https://laravel.com/docs/9.x
 
