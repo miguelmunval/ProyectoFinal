@@ -29,3 +29,12 @@ Video primera entrega:
 Video versión final de la aplicación AgroAssist:
 
 [![Alt text](https://img.youtube.com/vi/aXa4JJ8gKHo/0.jpg)](https://www.youtube.com/watch?v=aXa4JJ8gKHo)
+
+Bibliografía
+
+https://laravel.com/docs/9.x
+https://laravel.com/api/9.x/Illuminate.html
+https://github.com/fzaninotto/Faker
+https://docs.aws.amazon.com/
+https://tailwindcss.com/
+https://www.w3schools.com/
