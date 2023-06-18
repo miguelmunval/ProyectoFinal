@@ -25,3 +25,7 @@ En el que para los titulos uso una fuente más vistosa llamada IM FELL French Ca
 Video primera entrega:
 
 [![Alt text](https://img.youtube.com/vi/q76D7-hXwvE/0.jpg)](https://www.youtube.com/watch?v=q76D7-hXwvE)
+
+Video versión final de la aplicación AgroAssist:
+
+[![Alt text](https://img.youtube.com/vi/aXa4JJ8gKHo/0.jpg)](https://www.youtube.com/watch?v=aXa4JJ8gKHo)
