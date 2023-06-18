@@ -16,10 +16,14 @@ return new class extends Migration
             $table->foreignId('idPar')
             ->references('idPar')
             ->on('parcelas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
             ->unsignedBigInteger();
             $table->foreignId('idTra')
             ->references('idTra')
             ->on('trabajadores')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
             ->unsignedBigInteger();
             $table->string('desAct');
             $table->timestamps();

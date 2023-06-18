@@ -16,10 +16,14 @@ return new class extends Migration
             $table->foreignId('idUsu')
             ->references('idUsu')
             ->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
             ->unsignedBigInteger();
             $table->foreignId('idObj')
             ->references('idObj')
             ->on('objetos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
             ->unsignedBigInteger();
             $table->string('Cantidad');
             $table->date('FechComp');

@@ -11,7 +11,7 @@
                     <h1 class="my-5 mx-4 text-2xl">@lang('app.frmAct')</h1>
                 </div>
                 <div class="flex items-center justify-end mr-4">
-                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="{{ route('actividad.listar', $idTra) }}"> @lang('app.bck')</a>
+                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="{{ route('actividad.listar', $idUsu) }}"> @lang('app.bck')</a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             </div>
         @endif
         <div class="flex justify-center">
-        <form class="bg-red-200 rounded-lg p-5" action="{{ route('actividad.guardar', $idTra) }}" method="POST">
+        <form class="bg-red-200 rounded-lg p-5" action="{{ route('actividad.guardar', $idUsu) }}" method="POST">
             @csrf
             <div class="row">
                     <div class="col-md-6">

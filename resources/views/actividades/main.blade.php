@@ -30,6 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @dd($actividad)
                         @php
                             $count = max(count($parcela), count($actividad));
                         @endphp
@@ -41,7 +42,7 @@
                                 <td class="px-6 py-4">
                                     {{ $actividad[$i]->desAct ?? '' }}
                                 </td>
-                                    
+                                
                                 <td class="px-6 py-4">
                                     @csrf
                                     @method('DELETE')
@@ -65,7 +66,7 @@
             @lang('app.paAct')
         </div>
         <div class="flex items-center justify-end mr-4">
-            <a href="{{ route('actividad.crear', $idTra)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.nueAct')</a>
+            <a href="{{ route('actividad.crear', $idUsu)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.nueAct')</a>
         </div>
         @else
             <div class="row">
@@ -74,7 +75,7 @@
                         <h6 class="my-5 mx-4 text-2xl">@lang('app.listActUsu')</h6>
                     </div>
                     <div class="flex items-center justify-end mr-4">
-                        <a href="{{ route('actividad.crear', $idTra)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.nueAct')</a>
+                        <a href="{{ route('actividad.crear', $idUsu)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.nueAct')</a>
                     </div>
                 </div>
             </div>

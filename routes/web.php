@@ -85,8 +85,8 @@ Route::group(["prefix" => "actividades",
               "as" => "actividad."], function() 
 {
     Route::get("/listar/{idUsu}",  [ActividadController::class, "listar"])->name("listar") ;
-    Route::get("/crear/{idTra}", [ActividadController::class, "crear"])->name("crear") ;
-    Route::post("/guardar/{idTra}", [ActividadController::class, "guardar"])->name("guardar") ;
+    Route::get("/crear/{idUsu}", [ActividadController::class, "crear"])->name("crear") ;
+    Route::post("/guardar/{idUsu}", [ActividadController::class, "guardar"])->name("guardar") ;
     Route::get("/borrar/{idAct}", [ActividadController::class, "borrar"])->name("borrar") ;
 });
 Route::group(["prefix" => "cuadernodecampo", 

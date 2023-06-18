@@ -27,29 +27,32 @@ class ActividadController extends Controller
         } else {
             $parcela = null;
         }
-        return view('actividades.main', compact('parcela', 'actividad', 'idTra'));
+        return view('actividades.main', compact('parcela', 'actividad', 'idUsu'));
     }
     
-    function crear(Request $req, $idTra) {
+    function crear(Request $req, $idUsu) {
         $parcelas = DB::table('parcelas')->where('idUsu', Auth::id())->get();
     
-        return view("actividades.crear", compact('parcelas', 'idTra'));
+        return view("actividades.crear", compact('parcelas', 'idUsu'));
     }
 
-    function guardar(Request $req, $idTra) {
+    function guardar(Request $req, $idUsu) {
         $actividad = new Actividad;
         $actividad->idPar=$req->input('idPar');
+        $idTra = Trabajador::where('idUsu', $idUsu)->pluck('idTra')->first();
         $actividad->idTra=$idTra;
         $actividad->desAct=$req->input('desAct');
         $actividad->save();
-        return redirect()->route('actividad.listar', $idTra);
+        return redirect()->route('actividad.listar', $idUsu);
     }
 
     public function borrar(Request $req, $actividad) 
     {  
+        dd($actividad);
         $actividadBorrar=Actividad::find($actividad);
         $idTra = DB::table('actividades')->where('idAct', $actividad)->value('idTra');
+        $idUsu = Trabajador::where('idTra', $idTra)->pluck('idUsu')->first();
         $actividadBorrar->delete();
-        return redirect()->route("actividad.listar", $idTra) ;
+        return redirect()->route("actividad.listar", $idUsu) ;
     }
 }

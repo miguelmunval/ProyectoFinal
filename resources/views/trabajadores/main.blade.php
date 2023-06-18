@@ -56,7 +56,7 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a class="btn btn-primary" href="{{ route('actividad.listar',$trabajadores[$i]->idTra) }}">
+                                    <a class="btn btn-primary" href="{{ route('actividad.listar',$trabajadores[$i]->idUsu) }}">
                                         @lang('app.agreTrabajo')
                                     </a>
                                 </td>
