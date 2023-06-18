@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventario', function (Blueprint $table) {
+            $table->id('idInv');
             $table->foreignId('idUsu')
             ->references('idUsu')
             ->on('users')
@@ -22,8 +23,6 @@ return new class extends Migration
             ->unsignedBigInteger();
             $table->string('Cantidad');
             $table->date('FechComp');
-
-            $table->primary(['idUsu', 'idObj']);
             $table->timestamps();
         });
     }

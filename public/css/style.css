@@ -1,0 +1,77 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+#container{
+  width: 100%;
+  height: 100vh;
+}
+#video_background{
+  z-index: -1000;
+  position: relative;
+}
+#mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(245, 245, 245, 0.4);
+  overflow: hidden;
+}
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#svg5{
+  z-index: 1;
+}
+#title{
+  z-index: 1;
+  font-family: 'TituloManual';
+  font-size: 1250%;
+}
+#slider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+#lienzo{
+  width: 80%;
+  height: 70%;
+}
+
+.header-buttons {
+  text-align: center;
+  z-index: 1;
+}
+
+.header-buttons button {
+  padding: 1.5%;
+  background-color: #82d57b;
+  border: 1px solid;
+  border-radius: 1em;
+  z-index: 1;
+}
+
+@media (max-width: 1060px) {
+  #header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  #svg5{
+    width: 50%;
+    height: 60%;
+  }
+  #title{
+    font-size: 700%;
+    margin: 0;
+  }
+}

@@ -1,52 +1,36 @@
 @extends("layouts.app")
 
 @section("main")
-
-    
-    @empty($datos)
-        {{-- No hay datos: mostramos mensaje --}}
-        Lo siento, pero no hay parcelas en la base de datos.
-    @else
-        <h6 class="my-5 mx-4 text-2xl">@lang('app.Bienvenido') {{ Auth::user() }}</h6>
-        <div class="flex items-center justify-end mr-4">
-        {{-- Hay datos: mostramos listado de parcelas --}}
-        <table class="text-center text-2xl m-auto mt-5 bg-red-200 rounded-lg">
+    <h6 class="my-5 mx-4 text-2xl">@lang('app.Bienvenido') {{ Auth::user() }}</h6>
+    <div class="flex items-center justify-end mr-4">
+        <a href="{{ route('user.editar', Auth::id())}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.edit')</a>
+    </div>
+    <div class="flex items-center justify-end mr-4">
+    {{-- Hay datos: mostramos listado de parcelas --}}
+    <table class="text-center text-2xl m-auto mt-5 bg-red-200 rounded-lg">
+        <tbody>
             @foreach($datos as $user)
-            <tbody>
-                <tr>
-                    <th class="px-6 py-4">@lang("app.Nombre")</th>
-                
-                    <td class="px-6 py-4">{{$user->nombre}}</td>
-                </tr>
-                <tr>
-                    <th class="px-6 py-4">@lang("app.Apellidos")</th>
-                
-                    <td class="px-6 py-4">{{$user->apellido}}</td>
-                </tr>
-                <tr>
-                    <th class="px-6 py-4">@lang("app.email")</th>
-                
-                    <td class="px-6 py-4">{{$user->email}}</td>
-                </tr>
-                <tr>    
-                    <th class="px-6 py-4">@lang("app.pass")</th>
-                
-                    <td class="px-6 py-4">**********</td>
-                </tr>
-                {{-- <tr>
-                    <td class="px-6 py-4">
-                        <a href="{{ route("user.editar", $user->idUsu) }}"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                    </svg>                                    
-                        </a>
-                    </td>
-                </tr> --}}
-            @endforeach
-            </tbody>
-        </table>
-
-    @endempty
-   
-
-
+            <tr>
+                <th class="px-6 py-4">@lang("app.Nombre")</th>
+            
+                <td class="px-6 py-4">{{$user->nombre}}</td>
+            </tr>
+            <tr>
+                <th class="px-6 py-4">@lang("app.Apellidos")</th>
+            
+                <td class="px-6 py-4">{{$user->apellido}}</td>
+            </tr>
+            <tr>
+                <th class="px-6 py-4">@lang("app.email")</th>
+            
+                <td class="px-6 py-4">{{$user->email}}</td>
+            </tr>
+            <tr>    
+                <th class="px-6 py-4">@lang("app.pass")</th>
+            
+                <td class="px-6 py-4">**********</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection

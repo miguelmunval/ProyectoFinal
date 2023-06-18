@@ -16,7 +16,10 @@ class CultivoController extends Controller
      */
     public function listar(Request $req) 
     {   
-        $cultivos = Cultivo::paginate(6);
+        $cultivos = Cultivo::paginate(4);
+        if ($cultivos->isEmpty()) {
+            return view("cultivos.main")->with('datos', null);
+        }
         return view("cultivos.main", ["datos" => $cultivos]);
         
     }

@@ -17,8 +17,8 @@ class InventarioFactory extends Factory
     public function definition(): array
     {
         return [
-            'idUsu' => fake()->numberBetween(1,15),
-            'idObj' => fake()->numberBetween(1,3),
+            'idUsu' => 1,
+            'idObj' => fake()->numberBetween(1,10),
             'Cantidad'=> fake()->randomDigit(5),
             'FechComp'=> fake()->date(),
         ];

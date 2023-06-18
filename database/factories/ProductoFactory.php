@@ -18,7 +18,7 @@ class ProductoFactory extends Factory
     {
         return [
             'nomPro' => fake()->word,
-            'Precio' => fake()->randomFloat(15),
+            'Precio' => fake()->randomDigit(750),
         ];
     }
 }

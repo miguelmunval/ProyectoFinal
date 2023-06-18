@@ -9,8 +9,7 @@ class Actividad extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = ['idPar', 'idTra'];
-    public $incrementing = false;
+    protected $primaryKey = 'idAct';
 
     protected $table = "actividades" ;
 }

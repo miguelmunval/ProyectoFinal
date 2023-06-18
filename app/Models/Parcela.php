@@ -28,10 +28,9 @@ class Parcela extends Model
                     ->first() ;
     }
     
-    public function hist_cult_par()
+    public function hist_cult()
     {      
-        return $this->belongsToMany("App\Models\Cultivo", "historial_cultivo", "idPar", "idCult")
-                    ->getResults()->all() ;
+        return $this->belongsToMany(Cultivo::class, 'historial_cultivo', 'idPar', 'idCult');
     } 
 
     public function tra_par()

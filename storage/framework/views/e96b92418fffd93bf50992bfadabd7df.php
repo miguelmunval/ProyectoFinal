@@ -1,38 +1,51 @@
 
 
 <?php $__env->startSection("main"); ?>
-   <h1 class="my-5 mx-4 text-2xl">Formulario para añadir parcela:</h1>
-   <div class="flex items-center justify-end mr-4">
-      <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route('parcela.listar')); ?>"> Volver</a>
-  </div>
-   <div class="flex justify-center">
-      <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.guardar")); ?>" method="post">
-
-      <?php echo csrf_field(); ?>
-      <label for="locPar">Localización de la Parcela</label>
-      <br/>
-      <input class="mb-5" type="text" name="locPar" required />
-      <br/>
-      <label for="tamPar">Tamaño de la Parcela(ha)</label>
-      <br/>
-      <input class="mb-5" type="number" name="tamPar" required />
-      <br/>
-      <label for="idCult">Semilla de la Parcela</label>
-      <br/>
-      <select name="idCult" id="idCult">
-
-         <?php $__currentLoopData = $datos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cultivo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <option value="<?php echo e($cultivo->NomCult); ?>"><?php echo e($cultivo->NomCult); ?></option>
-         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </select>
-      <input class="mb-5" type="text" name="idCult" />
-      <br/>
-
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
-
-      </form>
+   <?php if(Auth::user()->roles == 'trabajador'): ?>
+      <h1><?php echo app('translator')->get('app.noAcs'); ?></h1>
+   <?php else: ?>
+      <script>document.title = "<?php echo e(config('app.name', 'Laravel')); ?> - Crear" </script>
+      <h1 class="my-5 mx-4 text-2xl"><?php echo app('translator')->get('app.frmPar'); ?></h1>
+      <div class="flex items-center justify-end mr-4">
+         <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route('parcela.listar')); ?>"> <?php echo app('translator')->get('app.bck'); ?></a>
    </div>
+      <div class="flex justify-center">
+         <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.guardar")); ?>" method="post">
 
+         <?php echo csrf_field(); ?>
+         <label for="locPar"><?php echo app('translator')->get('app.Localizacion'); ?></label>
+         <br/>
+         <input class="mb-5" type="text" name="locPar" required />
+         <br/>
+         <label for="tamPar"><?php echo app('translator')->get('app.Superficie'); ?>(ha)</label>
+         <br/>
+         <input class="mb-5" type="number" name="tamPar" required />
+         <br/>
+         <label for="idCult"><?php echo app('translator')->get('app.Semilla'); ?></label>
+         <br/>
+         <select class="mb-5" name="idCult" id="idCult">
+            <option selected disabled readonly><?php echo app('translator')->get('app.selCult'); ?></option>
+         
+            <script>
+               $("#select").ready(function(){
+                  $.ajax({
+                  url: "/peti_ajax",
+                  type: 'GET',
+                  success: function (result) {
+                     $.each(result, function(cultivo) {
+                     $("#idCult").append(new Option(result[cultivo].NomCult, result[cultivo].idCult));})
+                  }})
+               });
+            </script>
+         </select>
+         <br/>
+
+         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><?php echo app('translator')->get('app.sve'); ?></button>
+
+         </form>
+      </div>
+   <?php endif; ?>
+   
    <?php if($errors->any()): ?>
     <?php echo e($errors->first("numero")); ?>
 

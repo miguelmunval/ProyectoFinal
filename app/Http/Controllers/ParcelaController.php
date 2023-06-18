@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Parcela;
+use Illuminate\Support\Facades\DB;
+use App\Models\Historial_Cultivo;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ParcelaController extends Controller
@@ -14,8 +17,23 @@ class ParcelaController extends Controller
      */
     public function listar(Request $req) 
     {   
-        $parcelas = Parcela::usuario()->paginate(6);
+        $parcelas = Parcela::usuario()->paginate(4);
+        if ($parcelas->isEmpty()) {
+            return view("parcelas.main")->with('datos', null);
+        }
         return view("parcelas.main", ["datos" =>  $parcelas]);
+    }
+
+    /**
+     * @param Request $req
+     * @return
+     */
+    public function Hist_Cult(Request $req, $idPar)
+    {
+        $parcela = Parcela::find($idPar);
+        $hist= DB::table('historial_cultivo')->where('idPar', $idPar)->get();
+        $cultivos = $parcela->hist_cult;
+        return view('parcelas.hist_Cult', compact('parcela', 'cultivos', 'hist'));
     }
 
     /**
@@ -52,11 +70,16 @@ class ParcelaController extends Controller
     public function actualizar(Request $req, $parcela)
     {
         $parcelaEditar=Parcela::find($parcela);
+        $hist = new Historial_Cultivo;
+        $hist->idPar = $parcela;
+        $hist->idCult = $parcelaEditar->idCult;
+        $hist->fechaCult = Carbon::today();
         $parcelaEditar->locPar=$req->input('locPar');
         $parcelaEditar->tamPar=$req->input('tamPar');
         $parcelaEditar->idCult=$req->input('idCult');
 
         $parcelaEditar->update();
+        $hist->save();
         return redirect()->route("parcela.listar") ;
     }
     public function editar(Request $req, $parcela)

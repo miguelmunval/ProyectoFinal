@@ -9,8 +9,7 @@ class CuadernoCampo extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = ['idPar', 'idPro'];
-    public $incrementing = false;
+    protected $primaryKey = 'idCua';
 
     protected $table = "cuadernocampo" ;
 }

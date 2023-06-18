@@ -19,7 +19,7 @@ class ObjetoFactory extends Factory
         return [
             'NomObj' => fake()->word,
             'DesObj' => fake()->sentence,
-            'Precio' => fake()->randomFloat(15),
+            'Precio' => fake()->numberBetween(1,15),
         ];
     }
 }

@@ -7,14 +7,14 @@
                 <h1 class="my-5 mx-4 text-2xl">Formulario para editar Objeto:</h1>
             </div>
             <div class="flex items-center justify-end mr-4">
-                <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route('objeto.listar')); ?>"> Volver</a>
+                <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route('objeto.listar')); ?>"> @lang('app.bck')</a>
             </div>
         </div>
     </div>
 
     <?php if($errors->any()): ?>
         <div class="alert alert-danger">
-            <strong>¡Error!</strong> Por favor corrige los errores en el formulario.<br><br>
+            <strong>¡Error!</strong> @lang('app.corrige')<br><br>
             <ul>
                 <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li><?php echo e($error); ?></li>
@@ -29,13 +29,13 @@
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group mb-5">
-                      <label for="NomObj"><strong>Nombre:</strong></label>
+                      <label for="NomObj"><strong>@lang('app.Nombre')</strong></label>
                       <input type="text" name="NomObj" class="form-control" placeholder="Nombre" value="<?php echo e($objetoEditar->NomObj); ?>">
                   </div>
               </div>
               <div class="col-md-6">
                   <div class="form-group mb-5">
-                      <label for="DesObj"><strong>Descripción:</strong></label>
+                      <label for="DesObj"><strong>@lang('app.des')</strong></label>
                       <input type="text" class="form-control" name="DesObj" placeholder="Descripción" value="<?php echo e($objetoEditar->DesObj); ?>">
                   </div>
               </div>
@@ -58,7 +58,7 @@
                   </div>
               </div>
               <div class="col-md-12 text-center">
-				        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
+				        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.sve')</button>
               </div>
           </div>
       </form>

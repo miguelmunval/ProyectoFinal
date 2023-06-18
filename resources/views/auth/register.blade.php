@@ -11,19 +11,14 @@
                 @csrf
 
                 <!-- Name -->
-                <div>
-                    <x-input-label for="nomUsu" :value="__('Nombre de Usuario')" />
-                    <input id="nomUsu" class="block mt-1 w-full" type="text" name="nomUsu" required autofocus autocomplete="nomUsu" />
-                    <x-input-error :messages="$errors->get('nomUsu')" class="mt-2" />
-                </div>
                 <div class="mt-4">
                     <x-input-label for="nombre" :value="__('Nombre')" />
-                    <input id="nombre" class="block mt-1 w-full" type="text" name="nombre"  required autofocus autocomplete="nombre" />
+                    <x-text-input id="nombre" class="block mt-1 w-full" type="text" name="nombre"  required autofocus autocomplete="nombre" />
                     <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
                 </div>
                 <div class="mt-4">
                     <x-input-label for="apellido" :value="__('Apellido')" />
-                    <input id="apellido" class="block mt-1 w-full" type="text" name="apellido" required autofocus autocomplete="apellido" />
+                    <x-text-input id="apellido" class="block mt-1 w-full" type="text" name="apellido" required autofocus autocomplete="apellido" />
                     <x-input-error :messages="$errors->get('apellido')" class="mt-2" />
                 </div class="mt-4">
 
@@ -38,10 +33,7 @@
                 <div class="mt-4">
                     <x-input-label for="password" :value="__('Password')" />
 
-                    <x-text-input id="password" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password"
-                                    required autocomplete="new-password" />
+                    <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
 
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
@@ -55,6 +47,14 @@
                                     name="password_confirmation" required autocomplete="new-password" />
 
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                </div>
+                <div class="mt-4">
+                    <label for="roles" class="block font-medium text-sm text-gray-700">Rol</label>
+                    <select name="roles" id="roles" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">
+                        <option selected disabled readonly>Elige tu rol</option>
+                        <option value="propietario">Propietario</option>
+                        <option value="trabajador">Trabajador</option>
+                    </select>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">

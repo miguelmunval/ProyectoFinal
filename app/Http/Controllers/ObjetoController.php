@@ -14,7 +14,7 @@ class ObjetoController extends Controller
      */
     public function listar(Request $req) 
     {   
-        $objetos = Objeto::paginate(6);
+        $objetos = Objeto::paginate(4);
         return view("objetos.main", ["datos" => $objetos]);
     }
 
@@ -36,9 +36,7 @@ class ObjetoController extends Controller
         $objeto = new Objeto;
         $objeto->NomObj=$req->input('NomObj');
         $objeto->DesObj=$req->input('DesObj');
-        $objeto->EstSiem=$req->input('Cantidad');
-        $objeto->EstCos=$req->input('Precio');
-        $objeto->ZonaCult=$req->input('FechComp');
+        $objeto->Precio=$req->input('Precio');
 
         $objeto->save();
         return redirect()->route('objeto.listar');
@@ -59,9 +57,7 @@ class ObjetoController extends Controller
         $objetoEditar=Objeto::find($objeto);
         $objetoEditar->NomObj=$req->input('NomObj');
         $objetoEditar->DesObj=$req->input('DesObj');
-        $objetoEditar->Cantidad=$req->input('Cantidad');
         $objetoEditar->Precio=$req->input('Precio');
-        $objetoEditar->FechComp=$req->input('FechComp');
 
         $objetoEditar->update();
         return redirect()->route("objeto.listar") ;

@@ -6,20 +6,20 @@
       <form class="bg-red-200 rounded-lg p-5" action="<?php echo e(route("parcela.guardar")); ?>" method="post">
 
       <?php echo csrf_field(); ?>
-      <label for="locTer">Localización del Parcela</label>
+      <label for="locPar">Localización del Parcela</label>
       <br/>
-      <input class="mb-5" type="text" name="locTer" required />
+      <input class="mb-5" type="text" name="locPar" required />
       <br/>
-      <label for="tamTer">Tamaño del Parcela</label>
+      <label for="tamPar">Tamaño del Parcela</label>
       <br/>
-      <input class="mb-5" type="number" name="tamTer" required />
+      <input class="mb-5" type="number" name="tamPar" required />
       <br/>
-      <label for="semTer">Semilla del Parcela</label>
+      <label for="semPar">Semilla del Parcela</label>
       <br/>
-      <input class="mb-5" type="text" name="semTer" />
+      <input class="mb-5" type="text" name="semPar" />
       <br/>
 
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Guardar</button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">@lang('app.sve')</button>
 
       </form>
    </div>

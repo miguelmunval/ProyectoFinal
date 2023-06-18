@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cuadernocampo', function (Blueprint $table) {
+            $table->id('idCua');
             $table->foreignId('idPar')
             ->references('idPar')
             ->on('parcelas')
@@ -25,7 +26,6 @@ return new class extends Migration
             ->on('trabajadores')
             ->unsignedBigInteger();
             $table->date('fechafitosanitario');
-            $table->primary(['idPar', 'idPro']);
             $table->timestamps();
         });
     }

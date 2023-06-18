@@ -9,8 +9,7 @@ class Inventario extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = ['idUsu', 'idObj'];
-    public $incrementing = false;
+    protected $primaryKey = 'idInv';
 
     protected $table = "inventario" ;
 }

@@ -28,6 +28,6 @@ class Trabajador extends Model
     }
     
     public function scopeUsuario($query) {
-        return $query->where('idUsu', auth()->user()->idUsu);
+        return $query->where('jefe', auth()->user()->idUsu);
     }
 }

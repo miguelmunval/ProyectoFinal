@@ -20,11 +20,6 @@ class UserController extends Controller
         return view("users.main", ["datos" => User::usuario()->get() ]) ;
     }
 
-    /* public function trabaj_disp(Request $req)
-    {
-        return ["datos", DB::table('users')->select(...)->whereNotIn('idUsu',DB::table('trabajadores')->select('idUsu')->get())->get()];
-    } */
-
     /**
      * @param Request $req
      * @return
@@ -33,25 +28,30 @@ class UserController extends Controller
     public function guardar(Request $req) 
     {
         $user = new User;
-        $user->nomUsu=$req->input('nomUsu');
         $user->nombre=$req->input('nombre');
         $user->apellido=$req->input('apellido');
         $user->email=$req->input('email');
         $user->email_verified_at=Carbon::now()->toDateTimeString();
         $user->password=Hash::make($req->input('password'));
+        $user->roles=$req->input('roles');
         $user->save();
         return redirect()->route('parcela.listar');
     }
 
-    /**
-     * @param Request $req
-     * @return
-     */
-    /* public function borrar(Request $req, User $user) 
-    {  
-        
-        $user->delete() ;
+    public function actualizar(Request $req, $usuario)
+    {
+        $usuarioEditar=User::find($usuario);
+        $usuarioEditar->nombre=$req->input('nombre');
+        $usuarioEditar->apellido=$req->input('apellido');
+        $usuarioEditar->email=$req->input('email');
+        $usuarioEditar->password=Hash::make($req->input('password'));
+        $usuarioEditar->roles=$req->input('roles');
+        $usuarioEditar->update();
         return redirect()->route("user.listar") ;
-        
-    } */
+    }
+    public function editar(Request $req, $usuario)
+    {
+        $usuarioEditar=User::find($usuario);
+        return view("users.editar", compact("usuarioEditar"));
+    }
 }

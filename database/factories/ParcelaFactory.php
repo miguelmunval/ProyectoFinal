@@ -17,7 +17,7 @@ class ParcelaFactory extends Factory
     public function definition()
     {
         return [
-            'idUsu' => fake()->numberBetween(1,15),
+            'idUsu' => 1,
             'idCult' => fake()->numberBetween(1,8),
             'tamPar' => fake()->randomDigit(40),
             'locPar' => fake()->streetAddress(),

@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('actividades', function (Blueprint $table) {
+            $table->id('idAct');
             $table->foreignId('idPar')
             ->references('idPar')
             ->on('parcelas')
@@ -21,8 +22,6 @@ return new class extends Migration
             ->on('trabajadores')
             ->unsignedBigInteger();
             $table->string('desAct');
-            
-            $table->primary(['idPar', 'idTra']);
             $table->timestamps();
         });
     }
